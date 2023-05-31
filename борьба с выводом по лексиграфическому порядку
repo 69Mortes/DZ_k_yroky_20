@@ -25,8 +25,8 @@ stroka_2 = str(stroka_1).lower()  # Меняем все на строчный р
 stroka_3 = list()  # создаем пустой список, для сохранения слов без символов# stroka_4 =  запасной план list()
 alfavit = "abcdefghijklmnopqrstuvwxyz"  # английский алфавит
 rus_alfavit = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"  # русский алфавит
-a1 = ""  # создаем пустой список для уникальных слов
-a2 = []  # создаем пустой список для повторяющихся слов
+ # создаем пустой список для уникальных слов
+a1 = []  # создаем пустой список для повторяющихся слов
 set3 = ""  # создаем пустую строку, для сохранения слов без символов
 nomer = 0
 for cikl_2 in range(len(stroka_2)):  # создаем цикл для проверки букв и удаления ненужных символов
@@ -51,16 +51,56 @@ for cikl_2 in range(len(stroka_2)):  # создаем цикл для прове
 
                 if s1.count(s1[cikl_5]) == 1: # если слово не повторяется: пропускаем
                     pass
+                    #print("слово не повторяется")
+                    
                 # ниже слова которые повторяются 2 и более раз
                 # теперь надо чтобы выводилось 1 раз слово, которое повторилось чаще
                 else:          # print("слово", cikl_5, "повторилось", s1.count(cikl_5), "раза")
+                        a1.append(s1[cikl_5])
+            print("a1 = ", a1)
+            #
+            
+            try:
+                for cikl_6 in a1:
+              #  print("a1[cikl_6]: ", a1[cikl_6])
+          #      print("a1.count(a1[cikl_6]) = ", a1.count(a1[cikl_6]))
+                    if a1.count(cikl_6) > 1:
+                        a1.pop()
+                        print("1: ", a1)
+                      #  print("наиболее повторяющееся слово: ", a1)
+                        if a1.count(cikl_6) > 1:
+                            a1.pop()
+                            print("2:", a1)
+                    print("наиболее повторяющееся слово: ", str(a1))
+            
+                    #    pass
+         #   print("a1: ", a1)
+              #  for cikl_7 in range(len(1,a1)):
+                #    print("cikl_6", cikl_7)
+             #       if cikl_6 != cikl_7 and a1[cikl_6] == a1[cikl_7]:
+                     
+                       # and a1.count(a1[cikl_6]) >= a1.count(a1[cikl_7]):
+                                  #  if s1.count(s1[cikl_5]) == 1:
+                
+            #    print("наиболее повторяющееся слово: ", a1)
+                    a1.clear()
+            except(IndexError):
+                pass
+                          #  for cikl_7 
+                                        
+            
+            
+            
+          #  gus = a1.split()
+          #  a2.append(gus)
+            
+          #  print(a2)
+#for posled_1 in a2:
+    #posled_sort = posled_1.sorted
+    #print("posled_1 : ", posled_1)
+    #for posled_2 in posled_1:
+       # print(posled_2)
 
-                        a1 += s1[cikl_5] + " "
-                        print("a1 = ", a1)
-            gus = a1.split()
-            a2.append(gus)
-            a1 = ""
-            print(a2)
  # else:          # print("слово", cikl_5, "повторилось", s1.count(cikl_5), "раза")
  #                        if cikl_5 < cikl_5 and s1.count(s1[cikl_5]) >= s1.count(s1[cikl_5]):
  #                        # if наше_слово(индекс) < наше_слово(индекс) and количество повторений > количество повторений
@@ -72,3 +112,4 @@ for cikl_2 in range(len(stroka_2)):  # создаем цикл для прове
 
 
 
+    
